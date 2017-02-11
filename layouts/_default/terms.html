@@ -1,0 +1,21 @@
+
+{{ partial "header.html" . }}
+
+  <!-- Main Section Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <main id="list" role="main">
+    <div class="article-header light-gray"><h1>List of {{ .Title }}</h1></div>
+    {{ $plural := .Data.Plural }}
+    {{ range $key, $value := .Data.Terms }}
+        <div class="summary">
+            <h2>
+                #<a href="/{{ $plural }}/{{ $key | urlize }}">{{ $key }}</a>
+                ({{ len $value }})
+            </h2>
+        </div>
+    {{ end }}
+    </ul>
+  </main>
+
+{{ partial "footer.html" . }}
+

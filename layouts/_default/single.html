@@ -6,10 +6,10 @@
     <div class="article-header">
       <h1>{{ .Title }}</h1>
       <div class="meta">
-        {{ .Date.Format "Jan 2, 2006" }} &nbsp;
-        {{ range .Params.tags }}
+          <p>{{ .Date.Format "Jan 2, 2006" }}</p>
+          <p>Tags: {{ range .Params.tags }}
           #<a href="/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
-        {{ end }}
+          {{ end }}</p>
       </div>
     </div>
     <article>
